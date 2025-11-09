@@ -138,6 +138,16 @@
 
         .faq-answer.open {
             max-height: 500px;
+            padding-top: 16px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .faq-question[aria-expanded="true"] .faq-icon {
+            transform: rotate(180deg);
+            color: var(--beige-600);
         }
 
         /* Modal */
@@ -321,7 +331,7 @@
 
             <div class="flex-1 text-center p-4 rounded-xl shadow-lg bg-white border-b-4 border-amber-500 transition-shadow hover:shadow-xl">
                 <svg class="w-8 h-8 mx-auto mb-2 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944c-3.197 0-6.196 1.056-8.24 2.976m14.48 0c.376.54.67 1.144.887 1.815l-1.921-.497a8.001 8.001 0 00-14.807 0l-1.921.497c.217-.671.511-1.275.887-1.815m14.48 0A10.027 10.027 0 0012 20.056c-3.264 0-6.26-1.056-8.48-2.976M12 21a9 9 0 006.18-15.82C16.92 5.06 14.54 4 12 4s-4.92 1.06-6.18 5.18A9 9 0 0012 21z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 00-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01" />
                 </svg>
                 <p class="text-lg font-bold text-amber-900">ضمان محلي</p>
                 <p class="text-sm text-stone-700">راحة بال تامة</p>
@@ -329,7 +339,7 @@
 
             <div class="flex-1 text-center p-4 rounded-xl shadow-lg bg-white border-b-4 border-amber-500 transition-shadow hover:shadow-xl">
                 <svg class="w-8 h-8 mx-auto mb-2 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.73a2 2 0 01-1.026-1.748V7.478a2 2 0 011.026-1.748L9 3m0 17l6-3m-6 3V7m0 13a2 2 0 01-2-2v-4a2 2 0 012-2h4a2 2 0 012 2v4a2 2 0 01-2 2H9zm6-3l5.447 2.73a2 2 0 001.026-1.748V7.478a2 2 0 00-1.026-1.748L15 3" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
                 </svg>
                 <p class="text-lg font-bold text-amber-900">شحن آمن</p>
                 <p class="text-sm text-stone-700">توصيل إلى باب منزلك</p>
@@ -337,7 +347,7 @@
 
             <div class="flex-1 text-center p-4 rounded-xl shadow-lg bg-white border-b-4 border-amber-500 transition-shadow hover:shadow-xl">
                 <svg class="w-8 h-8 mx-auto mb-2 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944c-3.197 0-6.196 1.056-8.24 2.976M21 21l-9-5-9 5V5c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v16z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <p class="text-lg font-bold text-amber-900">منتجات أصلية</p>
                 <p class="text-sm text-stone-700">جودة مضمونة 100%</p>
@@ -554,8 +564,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
-                    <div id="faq-answer-0" class="faq-answer px-6 pb-0">
-                        <p class="text-amber-800 pb-6">
+                    <div id="faq-answer-0" class="faq-answer px-6">
+                        <p class="text-amber-800">
                             يتم التوصيل خلال 2-5 أيام عمل لمعظم الولايات. الجزائر العاصمة والمدن الكبرى: 1-2 أيام. المناطق النائية قد تستغرق حتى 7 أيام. سنتصل بك لتأكيد موعد التسليم الدقيق.
                         </p>
                     </div>
@@ -569,8 +579,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
-                    <div id="faq-answer-1" class="faq-answer px-6 pb-0">
-                        <p class="text-amber-800 pb-6">
+                    <div id="faq-answer-1" class="faq-answer px-6">
+                        <p class="text-amber-800">
                             نوفر ضمان شامل لمدة سنتين على جميع اللابتوبات. يغطي الضمان أي عيوب في التصنيع أو الأداء. لدينا مراكز صيانة معتمدة في أكثر من 20 ولاية. الضمان لا يشمل الأضرار الناتجة عن سوء الاستخدام أو الحوادث.
                         </p>
                     </div>
@@ -584,8 +594,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
-                    <div id="faq-answer-2" class="faq-answer px-6 pb-0">
-                        <p class="text-amber-800 pb-6">
+                    <div id="faq-answer-2" class="faq-answer px-6">
+                        <p class="text-amber-800">
                             نعم، يمكنك إرجاع اللابتوب خلال 14 يوم من تاريخ الاستلام إذا لم تكن راضياً عنه. شرط أن يكون المنتج في حالته الأصلية مع جميع الملحقات والتغليف. سيتم استرداد المبلغ كاملاً خلال 5-7 أيام عمل. تكاليف الشحن للإرجاع يتحملها العميل.
                         </p>
                     </div>
@@ -599,8 +609,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
-                    <div id="faq-answer-3" class="faq-answer px-6 pb-0">
-                        <p class="text-amber-800 pb-6">
+                    <div id="faq-answer-3" class="faq-answer px-6">
+                        <p class="text-amber-800">
                             نقبل الدفع عند الاستلام (الطريقة الأكثر شعبية)، التحويل البنكي عبر CCP أو بريدي موب، والدفع الإلكتروني عبر بطاقات CIB. للطلبات الكبيرة (أكثر من 3 قطع)، نقدم خيار الدفع بالتقسيط.
                         </p>
                     </div>
@@ -614,8 +624,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
-                    <div id="faq-answer-4" class="faq-answer px-6 pb-0">
-                        <p class="text-amber-800 pb-6">
+                    <div id="faq-answer-4" class="faq-answer px-6">
+                        <p class="text-amber-800">
                             100% من منتجاتنا أصلية ومستوردة من موزعين معتمدين. كل لابتوب يأتي مع ضمان دولي + ضمان محلي، الفواتير الرسمية، وأرقام Serial قابلة للتحقق. نحن وكلاء معتمدون لأشهر العلامات التجارية العالمية.
                         </p>
                     </div>
